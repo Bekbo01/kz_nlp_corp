@@ -1,0 +1,106 @@
+
+{% if txts %}
+    <ul>
+    {% for k in txts %}
+        <li>{{ k }}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+{% if text %}
+    <p>Text : {{ text }}</p>
+{% endif %}
+
+{% if result %}
+    <ul>
+    {% for k,v in result.items %}
+        <li>{{ k }}  --- {{ v }}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+
+
+<p>
+--------------------------<br>
+R_ZE	Noun, common (жалпы есім)<br>
+R_ZEQ	Noun, personal (жалқы есім)<br>
+R_ET	Verb (етістік)<br>
+R_ETK	Verb, auxiliary (көмекші етістік)<br>
+R_ETP	Verb, special action* (арнайы етістік жатыр, отыр, тұр, жүр)<br>
+R_ETPK	Verb, special action, auxiliary (арнайы көмекші етістік жатыр, отыр, тұр, жүр)<br>
+R_ETB	Verb, negative (жоқ, емес only, e.g. барған жоқ)<br>
+R_SE	Adjective (сын есім)<br>
+R_SIM	Pronoun (есімдік)<br>
+R_US	Adverb (үстеу)<br>
+R_ZHL	Conjunct (both coordinating and subordinating) - (салалас және сабаұтас жалғаулық шылаулар)<br>
+R_SN	Numeral (сан есім)<br>
+R_SH	Adposition / Particle (шылау, бөлшек)<br>
+R_MOD	Modal word (модаль сөз)<br>
+R_OS	Interjection (оқшау сөз)<br>
+R_ELK	Imitative (еліктеуіш)<br>
+R_SYM	Symbol (#, $, +, etc.)<br>
+R_BOS	Foreign word (бөтен / шетелдік сөз)<br>
+R_X	Un-analyzed (талданбаған)<br>
+-----------------------------------<br><br><br><br>
+R_NKT	.<br>
+R_UTR	,<br>
+R_DPH	-<br>
+R_ATRN	«<br>
+R_ZTRN	»<br>
+R_TRN	"<br>
+R_QNKT	:<br>
+R_SUR	?<br>
+R_AZZ	(<br>
+R_ZZZ	)<br>
+R_LEP	!<br>
+R_UNKT	;<br>
+R_SLH	/<br>
+R_APS	'<br>
+R_BSLH	\<br>
+----------------------------------------<br><br><br><br><br>
+N1	plural (көптік жалғау)<br>
+N1S	plural, after possessive, e.g. мама_R_ZE м_S1 дар_N1S<br>
+S1	possessive  (тәуелдік жалғау), first singular (1-ші жақ, жекеше)<br>
+S2	possessive, second singular<br>
+S3	possessive, third singular/plural<br>
+S4	possessive, second singular, formal<br>
+S5	possessive, first plural<br>
+S9	possessive, special (-ныкі, -дыкі, -тыкі)<br>
+S3SIM	possessive, third singular/plural, after pronouns<br>
+C2	genitive case (ілік септік)<br>
+C3	dative case (барыс септік)<br>
+C4	accusative case (табыс септік)<br>
+C5	locative case (жатыс септік)<br>
+C6	ablative case (шығыс септік)<br>
+C7	instrumental case (көмектес септік)<br>
+LATT	locative-attributive (-дағы, -дегі, -тағы, -тегі)<br>
+SML	similative (-дай, -дей, -тай, -тей)<br>
+ABE	abessive (-сыз, -сіз)<br>
+EQU	equative (-ша, -ше, e.g. балаша)<br>
+CMP	comparative, (adjectives and adverbs)<br>
+V1	reflexive voice (өздік етіс)<br>
+V2	passive voice (ортақ етіс)<br>
+V3	cooperative voice (өздік етіс)<br>
+V4	causative voice (өзгелік етіс)<br>
+M2	imperative mood (бұйрық рай)<br>
+M3	desiderative mood (қалау рай)<br>
+M4	conditional mood (шартты рай)<br>
+T1	aorist (ауыспалы осы/келер шақ)<br>
+T2	future tense (болжамды/мақсатты келер шақ)<br>
+T3	past tense (жедел/бұрынғы өткен шақ)<br>
+T3E	past tense, modified after е_R_ET (e.g., е_R_ET т_T3E)<br>
+P1	agreement (жіктік жалғау), 1st singular (1-ші жақ, жекеше)<br>
+P2	agreement, 2nd singular<br>
+P3	agreement, 3rd singular<br>
+P4	agreement, 2nd singular, formal<br>
+P5	agreement, 1st plural<br>
+P6	agreement, 2nd plural<br>
+P7	agreement, 3rd plural<br>
+P8	agreement, 2nd plural, formal<br>
+------------------------------------------------<br><br><br><br><br>
+ET_KSE	verbal adverb, participle (көсемше)<br>
+ET_ESM	verbal adjective, noun (есімше)<br>
+ET_ETU	gerund (тұйық етістік)<br>
+ET_ETB	negated verb (болымсыз етістік)<br>
+</p>
