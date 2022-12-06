@@ -26,7 +26,7 @@ def index(request, text):
     tagger.load_model(os.path.join('kaznlp', 'morphology', 'mdl'))
 
     # text = u'Еңбек етсең ерінбей, тояды қарның тіленбей.'
-
+    
     tokenizer = TokenizerHMM(model=mdl)
     result = dict()
     for sentence in tokenizer.tokenize(text):
