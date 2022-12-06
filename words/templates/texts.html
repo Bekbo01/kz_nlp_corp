@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block poems_active %} class="active" {% endblock %}
+{% block content %}
+<div class="page-header">
+    <h3>Мәтіндер</h3>
+</div>
+<div class="row">
+    {% include "pagination.html" %}
+    <div class="col-large-12">
+        <div class="table-responsive col-md-12">
+            <table class="table table-hover">
+                <thead>
+                    <th width="25%">Автор</th>
+                    <th width="45%">Мәтін атауы</th>
+                    <th width="10%" class="text-center">Жолдар саны</th>
+                    <th width="10%%" class="text-center">Разметка жасалды?</th>
+                </thead>
+                {% for poem in texts %}
+                <tr>
+                    <td>{{ poem.author }}</td>
+                    <td><a href="{% url 'text' pk=poem.pk %}">{{ poem.name }}</a></td>
+                    <td class="text-center">{{ poem.count_lines}}</td>
+                    <td class="text-center">{% if poem.count_manual_markups != 0 %}
+                        <i class="fa fa-check green" aria-hidden="true"></i>{% endif %}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    {% include "pagination.html" %}
+</div>
+{% endblock %}

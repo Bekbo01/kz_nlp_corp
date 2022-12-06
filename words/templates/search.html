@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block search_active %} class="active" {% endblock %}
+{% block content %}
+<div class="page-header">
+    <h3>Морфологиялық талдау</h3>
+</div>
+<div class="row">
+    <div class="col-large-12">
+        <form class="form-horizontal" method="get" action="{% url 'morphology_q'%}">
+            <div class="form-group row">
+                <div class="col-md-6 col-md-offset-3">
+                    <input id="id_q" name="q" class="form-control"  type="search" placeholder="Қазақша мәтін енгізіңіз">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-offset-3 col-md-6">
+                    <center>
+                        <button type="submit" class="btn btn-primary" value="Search">Талдау</button>
+                    </center>
+                </div>
+            </div>
+        </form>
+        {% if query %}
+
+            <h3>Результаты:</h3>
+            {% if result %}
+            <table class="table table-hover">
+                <thead>
+                    <th width="25%">Токен</th>
+                    <th width="60%">талдау</th>
+                </thead>
+                {% for k,v in result.items %}
+                <tr>
+                     <td title="aaaa", alt="aaaabb">{{ k }}</td>
+                     <td>{{ v }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            {% endif %}
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}
+

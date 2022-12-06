@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Корпус</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'css/typographic.css' %}">
+    <link rel="stylesheet" href="{% static 'css/common.css' %}">
+    <link rel="shortcut icon" href="{% static 'img/favicon/favicon.ico' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'img/favicon/favicon.ico' %}" type="image/x-icon">
+
+    <script src="{% static 'lib/jquery/js/jquery.min.js' %}"></script>
+    <script src="{% static 'lib/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/ajax.csrf.js' %}"></script>
+    <script src="{% static 'js/common.js' %}"></script>
+    {% block custom_head %}
+    {% endblock %}
+    <meta name="google-site-verification" content="QiUuvkUHh60lYdlPcFhQfamELL-EhJ5CF6TDeZskQB0" />
+    <meta name="yandex-verification" content="b7e672a8b3f45305" />
+</head>
+<body style="padding-top:50px;">
+<div id="wrap">
+    <nav class = "navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">corpus</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li {% block poems_active %} {% endblock %}>
+                        <a href="{% url 'texts' %}?page=1">Корпус</a>
+                    </li>
+                    <li {% block versions_active %} {% endblock %}>
+                        <a href="{% url 'texts' %}?page=1">Разметкалар...</a>
+                    </li>
+                    <li {% block search_active %} {% endblock %}>
+                        <a href="{% url 'morphology' %}">Морфологиялық талдау</a>
+                    </li>
+                </ul>
+                <ul class = "nav navbar-nav navbar-right">
+               
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div id="push"></div>
+</div>
+
+<div id="footer">
+    <div class="container">
+        <div class="text-muted credit text-center">
+            <p>Құрметбек Бекболат, 2022.</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static %}
+{% block analysis_active %} class="active" {% endblock %}
+{% block custom_head %}
+    <script src="{% static 'lib/mousetrap/mousetrap.min.js' %}"></script>
+    <script src="{% static 'js/poem.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="page-header">
+    <h3 class="poem-name">
+        <!--
+        {% if can_edit %}
+        <span id="author">
+            {{ poem.author }}
+            <a href="#" class="light"><i class="fa fa-pencil" id="author-pencil"></i></a>
+        </span>
+        <span id="author-edit" class="hidden">
+            <input id="author-field" type="text" value="{{ poem.author }}"/>
+        </span>
+            -
+        <span id="name">
+            {{ poem.name }}
+            <a href="#" class="light"><i class="fa fa-pencil" id="name-pencil"></i></a>
+        </span>
+         <span id="name-edit" class="hidden">
+            <input id="name-field" type="text" value="{{ poem.name }}"/>
+        </span>
+        {% else %}
+        {% endif %}
+-->
+        {{ text.author }} - {{ text.name }}</h3>
+
+    </h3>
+</div>
+<div class="row" >
+    {% if can_edit %}
+    <a class="btn btn-md btn-warning" id="edit-button">Өзгерту</a><!--
+    <a class="btn btn-md btn-danger delete-view" id="delete-button" href="">Удалить</a>-->
+    {% if not text.is_standard %}
+        <a class="btn btn-md btn-success" href="" id="poem-make-standard">Тексерілді</a>
+    {% endif %}
+
+    {% endif %}
+</div>
+<div class="row" style="padding-top:20px;">
+    <div class="col-lg-12 bigger-letters plain-text">
+        {{ text.text|linebreaksbr }}
+    </div>
+    {% if can_edit %}
+    <div class="col-lg-6 bigger-letters edit-plain-text hidden">
+        <form>
+            <textarea class="form-control mousetrap" rows="30" id="edit-text-field" name="text" style="overflow:auto;resize:none">{{ text.text}}</textarea>
+            <div style="padding-top:20px;">
+                <button class="btn btn-md btn-success" type="submit" id="save-button">Сақтау</button>
+                <button class="btn btn-md btn-danger" id="cancel-button">Отмена</button>
+            </div>
+        </form>
+    </div>
+    {% endif %}
+</div>
+<div class="row" style="padding-top:20px; padding-bottom: 20px;">
+    <a class="btn btn-md btn-primary" href="{% url 'text' pk=prev_pk %}" id="prev-button">Алдыңғы</a>
+    <a class="btn btn-md btn-primary" href="{% url 'text' pk=next_pk %}" id="next-button">Келесі</a>
+</div>
+{% csrf_token %}
+{% endblock %}
